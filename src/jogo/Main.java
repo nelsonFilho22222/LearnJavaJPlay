@@ -10,7 +10,8 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
 
-        Window janela = new Window(640, 480);
+        //Window janela = new Window(640, 480);
+        Window janela = new Window(800, 600);
         GameImage plano = new  GameImage(URL.sprite("menu.png"));
         Keyboard teclado = janela.getKeyboard();
         while(true){
