@@ -85,15 +85,18 @@ public class Jogador extends Sprite {
             TileInfo tile = (TileInfo)tiles.elementAt(i);
 
             if(controle.colisao(this, tile)== true){
+
                 if(colisaoVertical(this, tile)){
+
                     if(tile.y + tile.height - 2 < this.y){
                         this.y = tile.y + tile.height;
                     }
                     else if(tile.y > this.y + this.height){
-                        this.y = tile.y + tile.height;
+                        this.y = tile.y + this.height;
                     }
                 }
                 if(colisaoHorizontal(this, tile)){
+
                     if(tile.x > this.x + this.width){
                         this.x = tile.x - tile.width;
                     }
