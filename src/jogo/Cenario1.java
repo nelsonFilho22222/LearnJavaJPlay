@@ -5,7 +5,7 @@ import jplay.Scene;
 import jplay.URL;
 import jplay.Window;
 
-public class Cenario1 {
+public class Cenario1 extends Controle {
 
     private Window janela;
     private Scene cena;

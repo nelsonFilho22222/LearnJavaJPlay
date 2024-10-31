@@ -5,7 +5,7 @@ import jplay.Keyboard;
 import jplay.URL;
 import jplay.Window;
 
-import javax.swing.*;
+
 
 public class Main {
     public static void main(String[] args) {
