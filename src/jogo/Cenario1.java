@@ -10,6 +10,8 @@ public class Cenario1 extends Controle {
     private Window janela;
     private Scene cena;
     private Jogador jogador;
+    private Zumbi zumbi;
+
     private Keyboard teclado;
 
     public Cenario1(Window window) {
@@ -18,6 +20,7 @@ public class Cenario1 extends Controle {
        cena.loadFromFile(URL.scenario("Cenario1.scn"));
        jogador = new Jogador(640, 350);
        teclado = janela.getKeyboard();
+       zumbi = new Zumbi(300, 300);
 
         Som.play("musica.mid");
        run();
@@ -27,14 +30,22 @@ public class Cenario1 extends Controle {
         while(true) {
 //            cena.draw();
 
+            cena.moveScene(jogador);
+
             jogador.mover(janela, teclado);
             jogador.caminho(cena);
-            cena.moveScene(jogador);
+
+            zumbi.caminho(cena);
+            zumbi.perseguir(jogador.x, jogador.y);
+
+            zumbi.x += cena.getXOffset();
+            zumbi.y += cena.getYOffset();
 
             jogador.x += cena.getXOffset();
             jogador.y += cena.getYOffset();
 
             jogador.draw();
+            zumbi.draw();
             janela.update();
             janela.delay(2);
 
