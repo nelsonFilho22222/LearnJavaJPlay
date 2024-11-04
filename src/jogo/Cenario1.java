@@ -5,7 +5,7 @@ import jplay.Scene;
 import jplay.URL;
 import jplay.Window;
 
-public class Cenario1 extends Controle {
+public class Cenario1 {
 
     private Window janela;
     private Scene cena;
@@ -40,6 +40,8 @@ public class Cenario1 extends Controle {
 
             zumbi.x += cena.getXOffset();
             zumbi.y += cena.getYOffset();
+
+            jogador.atirar(janela, cena, teclado);
 
             jogador.x += cena.getXOffset();
             jogador.y += cena.getYOffset();

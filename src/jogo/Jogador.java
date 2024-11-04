@@ -3,6 +3,7 @@ package jogo;
 import jplay.*;
 import jplay.Window;
 
+import java.awt.event.KeyEvent;
 
 
 public class Jogador extends Ator {
@@ -14,6 +15,14 @@ public class Jogador extends Ator {
         this.setTotalDuration(2000);
     }
 
+    ControleTiros tiros = new ControleTiros();
+    public void atirar(Window janela, Scene cena, Keyboard teclado){
+
+        if(teclado.keyDown(KeyEvent.VK_A)){
+            tiros.adicionaTiro(x, y, direcao, cena);
+        }
+        tiros.run();
+    }
 
     public void mover(Window janela, Keyboard teclado) {
 
